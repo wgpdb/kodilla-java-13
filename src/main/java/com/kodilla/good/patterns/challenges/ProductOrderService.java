@@ -20,6 +20,7 @@ public class ProductOrderService {
         if (isOrderExecuted) {
             informationService.inform(orderRequest.getUser());
             orderRepository.createOrder(orderRequest.getUser(), orderRequest.getOrder(), orderRequest.getOrderDate());
+            orderRepository.addCompletedOrderToRepository(orderRequest);
             return new OrderDto(orderRequest.getUser(), true);
         } else {
             return new OrderDto(orderRequest.getUser(), false);

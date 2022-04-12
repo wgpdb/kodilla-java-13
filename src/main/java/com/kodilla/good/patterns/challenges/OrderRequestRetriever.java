@@ -6,6 +6,8 @@ public class OrderRequestRetriever {
 
     public OrderRequest retrieve() {
 
+        long orderRequestNumber = 1;
+
         User user = new User("jsmith", "John", "Smith", "john@smith.com",
                 "abc Street");
 
@@ -13,6 +15,6 @@ public class OrderRequestRetriever {
 
         LocalDateTime orderDate = LocalDateTime.now();
 
-        return new OrderRequest(user, order, orderDate);
+        return new OrderRequest(orderRequestNumber, user, order, orderDate);
     }
 }
