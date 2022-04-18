@@ -20,9 +20,11 @@ public class CompletedOrderRepository implements OrderRepository {
 
     @Override
     public void addCompletedOrderToRepository(OrderRequest orderRequest) {
-        completedOrders.put(orderRequest.getOrderRequestNumber(), orderRequest);
-        System.out.println("Order saved in completed orders repository: " +
-                completedOrders.containsKey(orderRequest.getOrderRequestNumber()));
+        if (orderRequest != null) {
+            completedOrders.put(orderRequest.getOrderRequestNumber(), orderRequest);
+            System.out.println("Order saved in completed orders repository: " +
+                    completedOrders.containsKey(orderRequest.getOrderRequestNumber()));
+        }
     }
 
     public HashMap<Long, OrderRequest> getCompletedOrders() {
