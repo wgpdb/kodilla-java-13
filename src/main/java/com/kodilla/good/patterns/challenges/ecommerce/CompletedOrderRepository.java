@@ -1,4 +1,4 @@
-package com.kodilla.good.patterns.challenges;
+package com.kodilla.good.patterns.challenges.ecommerce;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;
